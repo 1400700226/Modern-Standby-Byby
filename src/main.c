@@ -164,9 +164,7 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 		}
 	}
 
-	Print(L"%EPress any key to exit.%N\n");
 	SystemTable->ConIn->Reset(SystemTable->ConIn, FALSE);
-	SystemTable->BootServices->WaitForEvent(1, &SystemTable->ConIn->WaitForKey, &Event);
-
+	
 	return EFI_SUCCESS;
 }
